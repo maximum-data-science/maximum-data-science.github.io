@@ -8,20 +8,21 @@ layout: default
         <span class="post-meta">{{ page.date | date: date_format }}</span>
 
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}
+            {%if page.github %}
+            <a href="{{ site.github }}/{{ page.github }}" class="image-link">
+                <i class="fa fa-github"></i>
+            </a>
+            {% endif %}
         </h1>
         {% if page.noimage %}
         {% else %}
-        <img alt="{{ page.title }}" src="{{ site.baseurl }}/assets/images/{{page.id}}/top.jpg" class="img-responsive" />
+        <img alt="{{ site.baseurl }}/assets/posts{{page.id}}/images/header.png" src="{{ site.baseurl }}/assets/posts{{page.id}}/images/header.png" class="img-responsive post-title" />
         {% endif %}
-
-        {%if page.github %}
-        <p>
-            <a href="{{ page.github }}" class="btn btn-default">
-                <i class="fa fa-github fa-2x"></i> {{ page.github }}
-            </a>
-        </p>
+        {% if page.summary %}
+        <div class="summary">
+            {{ page.summary }}
+        </div>
         {% endif %}
-
 
     </header>
 

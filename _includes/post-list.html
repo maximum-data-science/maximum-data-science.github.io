@@ -4,17 +4,25 @@
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
 
-        <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">
+        <h1> <a class="post-link" href="{{ post.url | relative_url }}">
                 {{ post.title | escape }}</a>
-        </h2>
+            {%if post.github %}
+            <a href="{{ site.github }}/{{ post.github }}" class="post-title">
+                <i class="fa fa-github"></i>
+            </a>
+            {% endif %}
+        </h1>
         {% if post.noimage %}
         {% else %}
         <a class="post-link" href="{{ post.url | relative_url }}">
-            <img alt="{{ site.baseurl }}/assets/images{{post.id}}/top.jpg" src="{{ site.baseurl }}/assets/images{{post.id}}/top.jpg" class="img-responsive">
+            <img alt="{{ site.baseurl }}/assets/posts{{post.id}}/images/header.png" src="{{ site.baseurl }}/assets/posts{{post.id}}/images/header.png" class="img-responsive post-title" />
         </a>
         {% endif %}
-
+        {% if post.summary %}
+        <div class="summary">
+            {{ post.summary }}
+        </div>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>

@@ -6,8 +6,6 @@ a.tag {
     background-color: lightgray;
     padding: 1px 5px;
     border: 2px solid;
-    padding: 1px 5px;
-    border: 2px solid;
     line-height: 2;
     border-color: black;
     color: black;
@@ -17,7 +15,16 @@ a.tag {
 a.image-link  {
     color: black;
 }
-
+img.post-title {
+    border: 3px solid black;
+}
+a.post-link{
+    display: inline;
+}
+div.summary{
+    padding-top: 10px;
+    color: #5f6368;
+}
 .footer-links {
     margin: 0 0 0 0em;
     padding: 0;
