@@ -1,7 +1,9 @@
 .site-title{
     float: none
 }
-
+a {
+    color: #1756a9;
+}
 a.tag {
     background-color: lightgray;
     padding: 1px 5px;
