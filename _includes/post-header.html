@@ -1,0 +1,7 @@
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+<span class="post-meta">{{ include.param-post.date | date: date_format }}</span>
+
+<h2>
+    <a class="post-link" href="{{ include.param-post.url | relative_url }}">
+        {{ include.param-post.title | escape }}</a>
+</h2>

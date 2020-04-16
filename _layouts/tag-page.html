@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="post">
+
+  <h1 class="page-heading">Posts tagged with {{ page.tag }}</h1>
+
+  {% assign temp-posts = site.tags[page.tag] %}
+  {% include post-list.html param-posts=temp-posts %}
+</div>

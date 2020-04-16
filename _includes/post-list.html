@@ -1,0 +1,20 @@
+<ul class="post-list">
+    {% for post in include.param-posts %}
+    <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+        <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}</a>
+        </h2>
+        {% if post.noimage %}
+        {% else %}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+            <img alt="{{ site.baseurl }}/assets/images{{post.id}}/top.jpg" src="{{ site.baseurl }}/assets/images{{post.id}}/top.jpg" class="img-responsive">
+        </a>
+        {% endif %}
+
+    </li>
+    {% endfor %}
+</ul>
