@@ -1,0 +1,37 @@
+{% if include.items[0] %}
+---
+<h2> Dive a level deeper: </h2>
+<ul class="post-list">
+    {% for nav_item in include.items %}
+    {% for page in site.pages %}
+    {% assign page_id = page.url | remove: "/" %}
+    {% if page_id == nav_item.id %}
+    <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ page.date | date: date_format }}</span>
+
+        <h1> <a class="post-link" href="{{ page_id | relative_url }}">
+                {{ page.title | escape }}</a>
+            {%if page.github %}
+            <a href="{{ site.github }}/{{ page.github }}" class="post-title">
+                <i class="fa fa-github"></i>
+            </a>
+            {% endif %}
+        </h1>
+        {% if page.noimage %}
+        {% else %}
+        <a class="post-link" href="{{ page_id | relative_url }}">
+            <img alt="{{ site.baseurl }}/assets/pages/{{page_id}}/images/header.png" src="{{ site.baseurl }}/assets/pages/{{page_id}}/images/header.png" class="img-responsive post-title" />
+        </a>
+        {% endif %}
+        {% if page.summary %}
+        <div class="summary">
+            {{ page.summary }}
+        </div>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}

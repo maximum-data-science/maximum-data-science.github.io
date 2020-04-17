@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %}
+
+    {% comment %}
+    - The information in site.data.nav is connected in the following to the current page.
+    - Get pages in nav down to max 5 layers.
+    - Store the first page nav into page_nav.
+    {% endcomment %}
+
+    {% assign page_navs = "" | split: ',' %}
+    {% assign page_id = page.url | remove: "/" %}
+
+    {% if page_id == "index" %}
+    {% assign page_navs = page_navs | push: site.data.nav %}
+    {% else %}
+
+    {% for item in site.data.nav.items %}
+    {% if page_id == item.id %}
+    {% assign page_navs = page_navs | push: item %}
+    {% else %}
+
+    {% for item in item.items %}
+    {% if page_id == item.id %}
+    {% assign page_navs = page_navs | push: item %}
+    {% else %}
+
+    {% for item in item.items %}
+    {% if page_id == item.id %}
+    {% assign page_navs = page_navs | push: item %}
+    {% else %}
+
+    {% for item in item.items %}
+    {% if page_id == item.id %}
+    {% assign page_navs = page_navs | push: item %}
+    {% else %}
+
+    {% for item in item.items %}
+    {% if page_id == item.id %}
+    {% assign page_navs = page_navs | push: item %}
+
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    {% assign page_nav = page_navs[0] %}
+    <main class="page-nav-top" aria-label="Nav-Top">
+        <div class="wrapper">
+            {% include nav-paths.html %}
+            {% include nav-items-short.html items=page_nav.items %}
+        </div>
+    </main>
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </main>
+
+    <main class="page-related-content" aria-label="Nav-Bottom">
+        <div class="wrapper">
+            {% include nav-items-long.html items=page_nav.items %}
+        </div>
+    </main>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

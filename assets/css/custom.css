@@ -13,18 +13,17 @@ a.tag {
     color: black;
 }
 
-
 a.image-link  {
     color: black;
 }
 img.post-title {
     border: 3px solid black;
+    margin-bottom: 10px;
 }
 a.post-link{
     display: inline;
 }
 div.summary{
-    padding-top: 10px;
     color: #5f6368;
 }
 .footer-links {
@@ -75,4 +74,8 @@ img + em {
     display: inherit;
     text-align: center;
     font-size: 90%;
+}
+.page-related-content {
+    padding: 0px 0;
+    flex: 1;
 }

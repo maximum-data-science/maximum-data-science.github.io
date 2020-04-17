@@ -1,14 +1,33 @@
 ---
-layout: default
+layout: nav-default
 ---
-<article class="post">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <header class="post-header">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ page.date | date: date_format }}</span>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+        <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}
+            {%if page.github %}
+            <a href="{{ site.github }}/{{ page.github }}" class="image-link">
+                <i class="fa fa-github"></i>
+            </a>
+            {% endif %}
+        </h1>
+        {% if page.noimage %}
+        {% else %}
+        <img alt="{{ site.baseurl }}/assets/pages{{page.url}}/images/header.png" src="{{ site.baseurl }}/assets/pages{{page.url}}/images/header.png" class="img-responsive post-title" />
+        {% endif %}
+        {% if page.summary %}
+        <div class="summary">
+            {{ page.summary }}
+        </div>
+        {% endif %}
+
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
 
 </article>

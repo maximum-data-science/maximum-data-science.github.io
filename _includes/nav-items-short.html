@@ -1,0 +1,8 @@
+{% if include.items[0] %}
+<ul class="nav-list">
+    {% for item in include.items %}
+    <li><a class="tag" href="{{ site.baseurl }}/{{ item.id }}">{{ item.id }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

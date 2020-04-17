@@ -43,10 +43,10 @@ exclude:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-permalink: :title
+permalink: /:title/
 github: "https://github.com/maximum-data-science"
 
 collections:
    pages:
       output: true
-      permalink: :path
+      permalink: /:path

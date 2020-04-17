@@ -1,2 +1,4 @@
 items:
-  - url: venn-diagram-generator-x
+  - id: projects
+    items:
+        - id: venn-diagram-generator-x
