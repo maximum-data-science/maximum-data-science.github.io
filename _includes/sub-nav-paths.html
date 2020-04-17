@@ -2,10 +2,10 @@
 <ul class="nav-list">
     {% for item in include.items %}
     {% if item.id == page_id %}
-    <li class="nav-active"> / <a href="{{ site.baseurl }}/{{ item.id }}">{{ item.id }}</a></li>
+    <li class="nav-active"> / <a href="{{ site.baseurl }}/pages/{{ item.id }}">{{ item.id }}</a></li>
 
     {% else %}
-    <li class=""> / <a href="{{ site.baseurl }}/{{ item.id }}">{{ item.id }}</a>
+    <li class=""> / <a href="{{ site.baseurl }}/pages/{{ item.id }}">{{ item.id }}</a>
 
         {% if item.items[0] %}
         {% include sub-nav-paths.html items=item.items %}
