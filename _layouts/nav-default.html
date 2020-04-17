@@ -14,9 +14,9 @@
     {% endcomment %}
 
     {% assign page_navs = "" | split: ',' %}
-    {% assign page_id = page.url | remove: "/" %}
+    {% assign page_id = page.url | remove: "/pages/" %}
 
-    {% if page_id == "index" %}
+    {% if page_id == "/" %}
     {% assign page_navs = page_navs | push: site.data.nav %}
     {% else %}
 
@@ -61,6 +61,7 @@
     {% endif %}
 
     {% assign page_nav = page_navs[0] %}
+
     <main class="page-nav-top" aria-label="Nav-Top">
         <div class="wrapper">
             {% include nav-paths.html %}

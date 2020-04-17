@@ -49,4 +49,4 @@ github: "https://github.com/maximum-data-science"
 collections:
    pages:
       output: true
-      permalink: /:path
+      permalink: /pages/:path

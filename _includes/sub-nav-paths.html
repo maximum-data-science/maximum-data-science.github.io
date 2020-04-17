@@ -1,4 +1,4 @@
-{% assign page_id = page.url | remove: "/" %}
+{% assign page_id = page.url | remove: "/pages/" %}
 <ul class="nav-list">
     {% for item in include.items %}
     {% if item.id == page_id %}
