@@ -17,7 +17,7 @@ title: Maximum Data Science
 description: >- # this means to ignore newlines until "baseurl:"
   A website about Data Science.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://maximum-data-science.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 email: jim108@gmx.net
 
 # Build settings

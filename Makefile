@@ -8,7 +8,7 @@ all : serve
 
 check:
 	$(JEKYLL) build
-#	$(JEKYLL) doctor
+	$(JEKYLL) doctor
 	$(HTMLPROOF) \
 	--assume-extension \
 	_site
