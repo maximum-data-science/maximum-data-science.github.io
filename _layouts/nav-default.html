@@ -16,7 +16,7 @@
     {% assign page_navs = "" | split: ',' %}
     {% assign page_id = page.url | remove: "/pages/" %}
 
-    {% if page_id == "/" %}
+    {% if page.url == "/" %}
     {% assign page_navs = page_navs | push: site.data.nav %}
     {% else %}
 
@@ -61,13 +61,14 @@
     {% endif %}
 
     {% assign page_nav = page_navs[0] %}
-
+    {% if page_nav %}
     <main class="page-nav-top" aria-label="Nav-Top">
         <div class="wrapper">
             {% include nav-paths.html %}
             {% include nav-items-short.html items=page_nav.items %}
         </div>
     </main>
+    {% endif %}
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             {{ content }}

@@ -1,4 +1,12 @@
 items:
+  - id: programming
+    items:
+      - id: javascript
+        items:
+          - id: venn-diagram-generator-x
   - id: projects
     items:
-        - id: venn-diagram-generator-x
+      - id: venn-diagram-generator-x
+  - id: visualization
+    items:
+      - id: venn-diagram-generator-x

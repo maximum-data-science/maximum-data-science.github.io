@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //    return;
-    $("#nav")
+    $("div.nav-paths")
         .find("li")
         .not("li.nav-active")
         .hide();

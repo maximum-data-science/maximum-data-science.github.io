@@ -4,14 +4,6 @@
 a {
     color: #1756a9;
 }
-a.tag {
-    background-color: lightgray;
-    padding: 1px 5px;
-    border: 2px solid;
-    line-height: 2;
-    border-color: black;
-    color: black;
-}
 
 a.image-link  {
     color: black;
@@ -42,25 +34,34 @@ div.summary{
     border-top: 1px solid #e8e8e8;
     padding: 10px 0;
 }
-
-.nav-list {
-  display: inline;
-  list-style: none;
+div.nav-paths {
+    padding: 0px;
+    margin-bottom: 5px;
 }
 
-.nav-list li {
-  display: inline;
+div.nav-paths ul {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px;
+    list-style: none;
 }
-
-ul.nav-list {
-    margin-left: 0px;
-}
-ul.nav-child-list {
-    margin-left: 0px;
-}
-ul.tag-list {
+ul.nav-items-short {
     display: inline;
     margin-left: 0px;
+    list-style: none;
+}
+
+ul.nav-items-short li {
+    display: inline;
+}
+
+ul.nav-items-short a {
+    background-color: lightgray;
+    padding: 1px 5px;
+    border: 2px solid;
+    line-height: 2;
+    border-color: black;
+    color: black;
 }
 
 img {

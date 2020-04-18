@@ -1,9 +1,7 @@
 {% assign item = site.data.nav %}
-{% assign page_id = page.url | remove: "/pages/" %}
 
-<div id="nav">
-    {% if page_id == "" %}
-    {% else %}
+{% if page.url != "/" %}
+<div class="nav-paths">
     {% include sub-nav-paths.html items=site.data.nav.items %}
-    {% endif %}
 </div>
+{% endif %}
