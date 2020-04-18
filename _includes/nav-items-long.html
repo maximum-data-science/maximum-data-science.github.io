@@ -3,30 +3,30 @@
 <h2> Dive a level deeper: </h2>
 <ul class="post-list">
     {% for nav_item in include.items %}
-    {% for page in site.pages %}
-    {% assign page_id = page.url | remove: "/pages/" %}
-    {% if page_id == nav_item.id %}
+    {% for doc in site.docs %}
+    {% assign doc_id = doc.id | remove_first: site.docs_prefix %}
+    {% if doc_id == nav_item.id %}
     <li>
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ page.date | date: date_format }}</span>
+        <span class="post-meta">{{ doc.date | date: date_format }}</span>
 
-        <h1> <a class="post-link" href="{{ page.url | relative_url }}">
-                {{ page.title | escape }}</a>
-            {%if page.github %}
-            <a href="{{ site.github }}/{{ page.github }}" class="post-title">
+        <h1> <a class="post-link" href="{{ doc.url | relative_url }}">
+                {{ doc.title | escape }}</a>
+            {%if doc.github %}
+            <a href="{{ site.github }}/{{ doc.github }}" class="post-title">
                 <i class="fa fa-github"></i>
             </a>
             {% endif %}
         </h1>
-        {% if page.noimage %}
+        {% if doc.noimage %}
         {% else %}
-        <a class="post-link" href="{{ page.url | relative_url }}">
-            <img alt="{{ site.baseurl }}/assets{{page.url}}/images/header.png" src="{{ site.baseurl }}/assets{{page.url}}/images/header.png" class="img-responsive post-title" />
+        <a class="post-link" href="{{ doc.url | relative_url }}">
+            <img alt="{{ site.baseurl }}/assets{{doc.url}}/images/header.png" src="{{ site.baseurl }}/assets{{doc.url}}/images/header.png" class="img-responsive post-title" />
         </a>
         {% endif %}
-        {% if page.summary %}
+        {% if doc.summary %}
         <div class="summary">
-            {{ page.summary }}
+            {{ doc.summary }}
         </div>
         {% endif %}
     </li>

@@ -1,11 +1,12 @@
-{% assign page_id = page.url | remove: "/pages/" %}
+{% assign page_id = page.id | remove_first: site.docs_prefix %}
+
 <ul>
     {% for item in include.items %}
     {% if item.id == page_id %}
-    <li class="nav-active"> / <a href="{{ site.baseurl }}/pages/{{ item.id }}">{{ item.id }}</a></li>
+    <li class="nav-active"> / <a href="{{ site.baseurl }}{{ page.url }}">{{ page_id }}</a></li>
 
     {% else %}
-    <li> / <a href="{{ site.baseurl }}/pages/{{ item.id }}">{{ item.id }}</a>
+    <li> / <a href="{{ site.baseurl }}{{ site.docs_prefix }}{{ item.id }}">{{ item.id }}</a>
 
         {% if item.items[0] %}
         {% include sub-nav-paths.html items=item.items %}

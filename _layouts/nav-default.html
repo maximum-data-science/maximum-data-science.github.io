@@ -14,9 +14,8 @@
     {% endcomment %}
 
     {% assign page_navs = "" | split: ',' %}
-    {% assign page_id = page.url | remove: "/pages/" %}
-
-    {% if page.url == "/" %}
+    {% assign page_id = page.id | remove_first: site.docs_prefix %}
+    {% if page_id == "" %}
     {% assign page_navs = page_navs | push: site.data.nav %}
     {% else %}
 
