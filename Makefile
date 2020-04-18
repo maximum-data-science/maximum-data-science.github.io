@@ -9,9 +9,7 @@ all : serve
 check:
 	$(JEKYLL) build
 	$(JEKYLL) doctor
-	$(HTMLPROOF) \
-	--assume-extension \
-	_site
+	$(HTMLPROOF) --assume-extension _site
 
 install:
 	$(BUNDLE) install
@@ -19,11 +17,8 @@ install:
 update:
 	$(BUNDLE) update
 
-build:
-	$(JEKYLL) build
-
 serve:
-	$(JEKYLL) serve  --draft --baseurl ''
+	$(JEKYLL) serve --draft --baseurl ''
 
 clean:
 	rm -fr _site/
