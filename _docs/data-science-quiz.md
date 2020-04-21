@@ -21,5 +21,3 @@ Used technologies are:
 - [jekyll](https://github.com/jekyll/jekyll) / [minima](https://github.com/jekyll/minima) theme.
 - JavaScript/ jQuery
 - Anki
-
-This project is licensed under the MIT License.

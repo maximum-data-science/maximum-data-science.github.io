@@ -22,5 +22,3 @@ It is available at [https://maximum-data-science.github.io/venn-diagram-generato
 Used technologies are:
 - HTML5/SVG
 - JavaScript/ jQuery
-
-This project is licensed under the MIT license.
