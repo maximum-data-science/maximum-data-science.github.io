@@ -4,6 +4,7 @@ title: Data Science Quiz
 date: 2020-04-21
 summary: This website provides an online quiz as a preparation for data science interviews. The questions and answers can also be used with Anki, an open source spaced repetition software.
 noimage: true
+github: true
 ---
 
 The main functions are:

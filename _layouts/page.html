@@ -1,6 +1,8 @@
 ---
 layout: nav-default
 ---
+{% assign page_id = page.id | remove_first: site.docs_prefix %}
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
@@ -9,7 +11,7 @@ layout: nav-default
 
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}
             {%if page.github %}
-            <a href="{{ site.github }}/{{ page.github }}" class="image-link">
+            <a href="{{ site.github }}/{{ page_id }}" class="image-link">
                 <i class="fa fa-github"></i>
             </a>
             {% endif %}

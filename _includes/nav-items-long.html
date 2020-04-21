@@ -13,7 +13,7 @@
         <h1> <a class="post-link" href="{{ doc.url | relative_url }}">
                 {{ doc.title | escape }}</a>
             {%if doc.github %}
-            <a href="{{ site.github }}/{{ doc.github }}" class="post-title">
+            <a href="{{ site.github }}/{{ doc_id }}" class="post-title">
                 <i class="fa fa-github"></i>
             </a>
             {% endif %}
