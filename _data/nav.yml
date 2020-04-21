@@ -4,6 +4,9 @@ items:
       - id: javascript
         items:
           - id: venn-diagram-generator-x
+      - id: jekyll
+        items:
+          - id: menu-website
   - id: projects
     items:
       - id: venn-diagram-generator-x

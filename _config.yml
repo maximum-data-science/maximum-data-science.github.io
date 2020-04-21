@@ -44,6 +44,7 @@ exclude:
 
 permalink: /:title/
 github: "https://github.com/maximum-data-science"
+github-src: "https://github.com/maximum-data-science/maximum-data-science.github.io/blob/master/"
 
 collections:
    docs:
