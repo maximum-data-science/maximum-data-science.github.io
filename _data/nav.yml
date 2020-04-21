@@ -1,14 +1,19 @@
 items:
+  - id: interview-preparation
+    items:
+      - id: data-science-quiz
   - id: programming
     items:
       - id: javascript
         items:
+          - id: data-science-quiz
           - id: venn-diagram-generator-x
       - id: jekyll
         items:
           - id: menu-website
   - id: projects
     items:
+      - id: data-science-quiz
       - id: venn-diagram-generator-x
   - id: visualization
     items:

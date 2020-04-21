@@ -2,11 +2,27 @@ BUNDLE := bundle
 JEKYLL := $(BUNDLE) exec jekyll
 HTMLPROOF := $(BUNDLE) exec htmlproofer
 
-.PHONY: all clean install update
+README_NAMES := venn-diagram-generator-x data-science-quiz
+DIR_README_NAMES := $(addprefix _project-readmes/,$(README_NAMES))
+READMES := $(addsuffix .txt,$(DIR_README_NAMES))
+
+.PHONY: all clean install update readmes build
 
 all : serve
 
-check:
+readmes: ${READMES}
+
+_project-readmes/%.txt:_docs/%.md
+	@echo "input" $<
+	@echo "output" $@
+	cp $< $@
+	sed -i 's/layout: *page */layout: readme/g' $@
+
+check-local:
+	$(JEKYLL) build --config "_config.localhost.yml"
+	$(HTMLPROOF) --assume-extension _site
+
+check-online:
 	$(JEKYLL) build
 	$(JEKYLL) doctor
 	$(HTMLPROOF) --assume-extension _site
@@ -16,6 +32,9 @@ install:
 
 update:
 	$(BUNDLE) update
+
+build:
+	$(JEKYLL) build
 
 serve:
 	$(JEKYLL) serve --draft --baseurl ''

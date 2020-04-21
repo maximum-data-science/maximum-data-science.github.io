@@ -2,7 +2,7 @@
 title: Venn Diagram Generator
 date: 2020-04-17
 summary: A quick generator for Venn diagrams in HTML5/SVG.
-layout: page
+layout: readme
 github: venn-diagram-generator-x
 ---
 
