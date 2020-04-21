@@ -1,4 +1,6 @@
-[Maximum Data Science](https://maximum-data-science.github.io) is a website which showcases some of my projects focussing on data science.
+# Maximum Data Science
+
+This website showcases some of my projects focussing on data science.
 
 
 The main functions are:
